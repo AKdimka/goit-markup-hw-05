@@ -2,9 +2,6 @@ a,
 a:visited {
 	text-decoration: none;
 }
-ul li {
-	list-style: none;
-}
 h1,
 h2,
 h3,
@@ -12,6 +9,7 @@ p {
 	margin: 0;
 }
 ul {
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -22,6 +20,7 @@ img {
 }
 :root {
 	--brand-color: #2196f3;
+	--btn-second: #188ce8;
 	--primery-text-color: #757575;
 	--secondary-text-color: #212121;
 	--bg-color: #ffffff;
@@ -94,6 +93,7 @@ nav {
 	padding-top: 32px;
 	padding-bottom: 32px;
 
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: var(--secondary-text-color);
 }
 .contacts {
@@ -114,6 +114,7 @@ nav {
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: var(--primery-text-color);
 }
 .current {
@@ -129,6 +130,7 @@ nav {
 	display: block;
 	width: 100%;
 	height: 4px;
+	border-radius: 2px;
 
 	background: var(--brand-color);
 }
@@ -142,6 +144,7 @@ nav {
 	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 }
 .hero-title {
 	font-weight: 900;
@@ -188,6 +191,7 @@ nav {
 
 	background: rgba(0, 0, 0, 0.2);
 }
+
 .backdrop.is-hidden {
 	opacity: 0;
 	pointer-events: none;
@@ -307,6 +311,7 @@ nav {
 	background: rgba(47, 48, 58, 0.8);
 }
 .skill-name {
+	font-weight: 700;
 	font-size: 14px;
 	line-height: 16px;
 	text-align: center;
@@ -380,6 +385,8 @@ nav {
 	border-radius: 50%;
 
 	fill: #afb1b8;
+
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon {
 	height: 20px;
@@ -411,6 +418,8 @@ nav {
 	fill: #afb1b8;
 	border: 1px solid #afb1b8;
 	border-radius: 4px;
+
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-logo {
 }
@@ -446,6 +455,8 @@ address {
 	line-height: 1.7;
 
 	color: rgba(255, 255, 255, 0.6);
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join {
@@ -472,11 +483,11 @@ address {
 	width: 44px;
 	border-radius: 50%;
 
+	padding: 12px;
+	fill: var(--bg-color);
 	background: rgba(255, 255, 255, 0.1);
 
-	padding: 12px;
-
-	fill: var(--bg-color);
+	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --------------Портфолио-------------- */
@@ -508,6 +519,9 @@ address {
 
 	background: var(--third-bg);
 	border-radius: 4px;
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* -------Проэкты------- */
@@ -527,6 +541,8 @@ address {
 
 .project-link {
 	display: block;
+
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-thumb {
 	position: relative;
@@ -542,6 +558,7 @@ address {
 	height: 100%;
 	background: rgba(33, 150, 243, 0.9);
 
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	transform: translateY(100%);
 }
 .project-content {
@@ -581,6 +598,7 @@ address {
 
 	padding: 63px 24px;
 
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	transform: translateY(100%);
 
 	color: #fff;
@@ -590,14 +608,11 @@ address {
 .project-link:hover .project-thumb:before,
 .project-link:focus .project-thumb:before {
 	transform: translateY(0);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* -------При наведении------- */
 .filter__button:hover,
 .filter__button:focus {
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: var(--bg-color);
 	background: var(--brand-color);
 
@@ -610,35 +625,30 @@ address {
 .nav__link:focus,
 .contacts-link:focus,
 .address-link:focus {
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: var(--brand-color);
 	fill: var(--brand-color);
 }
 
 .join-link:hover,
 .join-link:focus {
-	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	background: var(--brand-color);
 }
 .media-link:focus,
 .media-link:hover {
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	fill: var(--bg-color);
 	background-color: var(--brand-color);
 }
 .client-link:focus,
 .client-link:hover {
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	fill: var(--brand-color);
 	border-color: var(--brand-color);
 }
 .project-link:focus,
 .project-link:hover {
-	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-:focus {
-	outline: 0;
-	outline-offset: 0;
+.btn:hover,
+.btn:focus {
+	background-color: var(--btn-second);
 }
