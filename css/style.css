@@ -220,6 +220,7 @@ nav {
 	top: 8px;
 	right: 8px;
 
+	cursor: pointer;
 	background: #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
